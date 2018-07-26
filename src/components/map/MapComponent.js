@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const StyledMapContainer = styled.div`
   position: relative;
-  height: 100%;
-  width: 100%;
-  display: block;
+  height: 90%;
+  width: 50%;
+  display: flex;
 `;
 
 export class MapComponent extends React.Component {

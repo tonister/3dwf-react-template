@@ -11,7 +11,6 @@ const StyledHeaderComponent = styled.section`
   background: pink;
   align-items: center;
   padding: 5px;
-  box-sizing: inherit;
   justify-content: space-between;
 `;
 

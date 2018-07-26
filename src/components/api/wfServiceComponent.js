@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { MapComponent } from "../map/MapComponent";
 import { HeaderComponent } from "../header/HeaderComponent";
+import { NavMenuComponent } from "../navMenu/NavMenuContainer";
 
 declare var Wayfinder3D;
 declare var WayfinderAPI;
@@ -14,7 +15,8 @@ const StyledWayfinderContainer = styled.div`
   margin: 0;
   padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   overflow: hidden;
   box-sizing: border-box;
 `;
@@ -31,6 +33,7 @@ export class WfService extends React.Component {
     var wayfinder = this.state.wayfinder;
     WayfinderAPI.LOCATION = "//api.3dwayfinder.com/";
     wayfinder.options.assetsLocation = "//static.3dwayfinder.com/shared/";
+    wayfinder.options.disableModelLoading = true;
     this.cbOnMapReady = this.cbOnMapReady.bind(this);
     wayfinder.cbOnMapReady = this.cbOnMapReady;
   }
@@ -40,7 +43,7 @@ export class WfService extends React.Component {
   }
   render() {
     return (
-      <StyledWayfinderContainer>
+      <StyledWayfinderContainer className="wf-container">
         <HeaderComponent
           title={
             this.state.dataLoaded ? this.state.wayfinder.building.name : ""
@@ -50,6 +53,7 @@ export class WfService extends React.Component {
           }
         />
         <MapComponent wayfinder={this.state.wayfinder} />
+        <NavMenuComponent wayfinder={this.state.wayfinder} />
       </StyledWayfinderContainer>
     );
   }
