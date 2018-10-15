@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { TabsComponent } from "./TabsComponent";
+import { TabsComponent } from "../components/Tabs";
 
 const StyledNavMenu = styled.div`
   position: relative;
