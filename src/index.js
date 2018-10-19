@@ -15,6 +15,8 @@ import { WfService } from "./components/api/wfServiceComponent";
 
 //store.dispatch(CREATORS.setLanguage(1));
 
+console.log("dummy");
+
 //unsubscribe();
 const StyledAppContainer = styled.div`
   position: relative;
