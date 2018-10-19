@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { MapComponent } from "../map/MapComponent";
-import { HeaderComponent } from "../header/HeaderComponent";
-import { NavMenuComponent } from "../navMenu/NavMenuContainer";
+import { MapComponent } from "../components/Map";
+import { HeaderComponent } from "../components/Header";
+import { NavMenuComponent } from "./NavMenu";
 
-declare var Wayfinder3D;
-declare var WayfinderAPI;
+const Wayfinder3D = window.Wayfinder3D;
+let WayfinderAPI = window.WayfinderAPI;
 
 const StyledWayfinderContainer = styled.div`
   position: relative;
@@ -27,6 +27,7 @@ export class WfService extends React.Component {
 
     this.state = {
       wayfinder: new Wayfinder3D(),
+      api: WayfinderAPI,
       dataLoaded: false
     };
 
